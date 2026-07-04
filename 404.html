@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting...</title>
-    <script>
-        // Redirect all 404 requests to index.html for SPA routing
-        const path = window.location.pathname;
-        const pathArray = path.split('/');
-        const lastSegment = pathArray[pathArray.length - 1];
-        
-        // If the path doesn't have a file extension, redirect to index.html
-        if (!lastSegment.includes('.')) {
-            window.location.href = '/konolive/index.html';
-        }
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Konolive</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+        l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
-</head>
-<body>
-    Redirecting...
-</body>
+  </head>
+  <body>
+  </body>
 </html>

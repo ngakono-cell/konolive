@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+        // Redirect all 404 requests to index.html for SPA routing
+        const path = window.location.pathname;
+        const pathArray = path.split('/');
+        const lastSegment = pathArray[pathArray.length - 1];
+        
+        // If the path doesn't have a file extension, redirect to index.html
+        if (!lastSegment.includes('.')) {
+            window.location.href = '/konolive/index.html';
+        }
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>
